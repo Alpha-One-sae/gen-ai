@@ -1,6 +1,7 @@
 from fastapi import Header, requests, FastAPI
 from pydantic import BaseModel
 
+
 app = FastAPI()
 # const  data = {
 #     "username": "abc@gmail.com",
@@ -15,6 +16,7 @@ class credentials(BaseModel):
     username: str
     password: str
 
+
 # Logic to check user credentials
 def check_credentials(un, pwd):
     if(un == username):
@@ -23,6 +25,7 @@ def check_credentials(un, pwd):
         return {"status": "Password incorrect"}
     else:
         return {"status": "credentials not correct"}
+
 
 # Server request Logic
 @app.post("/authentication")
